@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Lista categorii";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (Enciclopedie.Models.Category category in ViewBag.Categories)
+{
+    <div class="panel panel-default">
+        @Html.Partial("CategoryInfo", category)
+
+        <div class="panel-footer">
+            <a class="btn btn-success" href="/Category/Show/@category.CategoryId">Afisare categorie</a>
+            <br />
+        </div>
+    </div>
+}
+
+<br />
+<a class="btn btn-info" href="/Category/New">Adauga categorie</a>
+<br />
+

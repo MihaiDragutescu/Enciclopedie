@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Lista articole";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr />
+@foreach (Enciclopedie.Models.Article article in ViewBag.Articles)
+{
+    <div class="panel panel-default">
+        @Html.Partial("ArticleInfo", article)
+        <br /> &nbsp
+
+        <div class="panel-footer">
+            <a class="btn btn-success" href="/Article/Show/@article.Id">Afisare articol</a>
+            <br />
+        </div>
+
+    </div>
+}
+
+<br />
+&nbsp &nbsp<a class="btn btn-info" href="/Article/New">Adauga articol</a>
+<br />

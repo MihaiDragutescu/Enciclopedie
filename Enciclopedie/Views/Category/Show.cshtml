@@ -1,0 +1,39 @@
+﻿
+@model Enciclopedie.Models.Category
+
+@{
+    ViewBag.Title = "Afisare categorie";
+}
+
+<br />
+<div class="panel panel-default">
+    @Html.Partial("CategoryInfo", @Model)
+    @if (ViewBag.afisareButoane == true)
+    {
+        <div class="panel-footer">
+            <a class="btn btn-success" href="/Category/Edit/@Model.CategoryId">Modifica categorie</a>
+            <br />
+        </div>
+    }
+    else
+    {
+        <div class="panel-footer">
+            <br />
+        </div>
+    }
+</div>
+
+
+@using (Html.BeginForm(actionName: "Delete", controllerName: "Category", method: FormMethod.Post, routeValues: new { id = @Model.CategoryId }))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+    <br />
+    <button class="btn btn-success" type="submit">Sterge categorie</button>
+}
+    
+<hr />
+<a class="btn btn-info" href="/Category/New">Adauga categorie</a>
+<br />
+
+
+

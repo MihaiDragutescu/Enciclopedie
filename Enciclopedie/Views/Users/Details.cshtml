@@ -1,0 +1,23 @@
+﻿
+@model Enciclopedie.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Detalii utilizator";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@Html.LabelFor(m => m.Email, "Email:")
+<br />
+@Html.DisplayFor(m => m.Email)
+<br />
+<br />
+@Html.LabelFor(m => m.UserName, "Username:")
+<br />
+@Html.DisplayFor(m => m.UserName)
+<br />
+<br />
+<label>Rol:</label>
+<p>@ViewBag.UserRole</p>
+
+

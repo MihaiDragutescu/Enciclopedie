@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Lista utilizatori";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <thead>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Actualizeaza</th>
+    <th>Detalii</th>
+    </thead>
+    <tbody>
+        @foreach (var user in ViewBag.UsersList)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@Html.ActionLink("Actualizeaza", "Edit", new { id = user.Id })</td>
+                <td>@Html.ActionLink("Vezi detalii", "Details", new { id = user.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

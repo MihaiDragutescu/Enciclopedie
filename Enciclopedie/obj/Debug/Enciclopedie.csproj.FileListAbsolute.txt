@@ -106,3 +106,14 @@ C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie
 C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.csproj.CopyComplete
 C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.dll
 C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.pdb
+C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.Migrations.InitialCreate.resources
+C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.csproj.GenerateResource.cache
+C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.Migrations.M.resources
+C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.Migrations.Initial.resources
+C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.Migrations.Initial1.resources
+C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.Migrations.Initial2.resources
+C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.Migrations.Initial3.resources
+C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.Migrations.Initial4.resources
+C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.Migrations.Initial5.resources
+C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.Migrations.Initial6.resources
+C:\Users\Mihai\Desktop\Anul III\Enciclopedie\Enciclopedie\obj\Debug\Enciclopedie.Migrations.Initial7.resources

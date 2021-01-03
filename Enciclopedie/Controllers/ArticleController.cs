@@ -10,13 +10,8 @@ using System.Web.Mvc;
 namespace Enciclopedie.Controllers
 {
     public class ArticleController : Controller
-{
+    {
         private ApplicationDbContext db = new ApplicationDbContext();
-        //public string UserId { get; set; }
-
-        //ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
-
-        //public virtual ApplicationUser User { get; set; }
 
         [AllowAnonymous]
         public ActionResult Index()
@@ -144,6 +139,7 @@ namespace Enciclopedie.Controllers
                         if (TryUpdateModel(article))
                         {
                             article.Title = requestArticle.Title;
+                            article.Summary = requestArticle.Summary;
                             article.Content = requestArticle.Content;
                             article.Date = requestArticle.Date;
                             article.CategoryId = requestArticle.CategoryId;
@@ -174,8 +170,10 @@ namespace Enciclopedie.Controllers
         public ActionResult Delete(int id)
         {
             Article article = db.Articles.Find(id);
+            Image image = db.Images.Find(id);
             if (article.UserId == User.Identity.GetUserId() || User.IsInRole("Administrator"))
             {
+                db.Images.Remove(image);
                 db.Articles.Remove(article);
                 db.SaveChanges();
                 TempData["message"] = "Articolul a fost sters!";

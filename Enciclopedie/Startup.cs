@@ -25,6 +25,8 @@ namespace Enciclopedie
                 var user = new ApplicationUser();
                 user.UserName = "admin@admin.com";
                 user.Email = "admin@admin.com";
+                user.DateOfBirth = "23/11/1998";
+                user.Phone = "0748398502";
 
                 var adminCreated = userManager.Create(user, "Administrator1!");
                 if (adminCreated.Succeeded)

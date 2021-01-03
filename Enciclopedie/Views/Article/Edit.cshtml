@@ -1,8 +1,7 @@
-﻿
-@model Enciclopedie.Models.Article
+﻿@model Enciclopedie.Models.Article
 
 @{
-    ViewBag.Title = "Editare Articol";
+    ViewBag.Title = "Modifica articol";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -12,25 +11,32 @@
     @Html.HttpMethodOverride(HttpVerbs.Put)
     @Html.HiddenFor(m => m.Id)
     <br />
-    @Html.Label("Title", "Titlu Articol")
+    @Html.Label("Title", "Titlu articol:")
     <br />
     @Html.EditorFor(m => m.Title)
     <br />
     @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger " })
     <br />
     <br />
-    @Html.Label("Content", "Continut Articol")
+    @Html.Label("Summary", "Rezumat articol:")
     <br />
-    @Html.EditorFor(m => m.Content)
+    @Html.TextAreaFor(m => m.Summary, new { @class = "my-content" })
     <br />
-    @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger " })
+    @Html.ValidationMessageFor(m => m.Summary, "", new { @class = "text-danger " })
+    <br />
+    <br />
+    @Html.Label("Content", "Continut articol:")
+    <br />
+    @Html.TextAreaFor(m => m.Content, new { @class = "my-content" })
+    <br />
+    @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger " })
     <br />
     <br />
     @Html.HiddenFor(m => m.Date)
     <br />
-    <label>Selectati categoria</label> @Html.DropDownListFor(m => m.CategoryId, new SelectList(Model.Categories, "Value", "Text"), "Selectati categoria", new { @class = "form-control" })
+    <label>Selectati categoria:</label> @Html.DropDownListFor(m => m.CategoryId, new SelectList(Model.Categories, "Value", "Text"), "Selectati categoria", new { @class = "form-control" })
     <br />
     @Html.ValidationMessageFor(m => m.CategoryId, "", new { @class = "text-danger " })
     <br />
-    <button class="btn btn-success" type="submit">Modifica articol</button>
+    <button class="btn btn-success" type="submit">Modifica</button>
 }

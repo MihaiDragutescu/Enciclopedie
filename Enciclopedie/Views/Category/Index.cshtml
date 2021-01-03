@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Lista categorii";
+    ViewBag.Title = "Categorii:";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -11,7 +11,7 @@
         @Html.Partial("CategoryInfo", category)
 
         <div class="panel-footer">
-            <a class="btn btn-success" href="/Category/Show/@category.CategoryId">Afisare categorie</a>
+            <a class="btn btn-success" href="/Category/Show/@category.CategoryId">Afiseaza categoria</a>
             <br />
         </div>
     </div>

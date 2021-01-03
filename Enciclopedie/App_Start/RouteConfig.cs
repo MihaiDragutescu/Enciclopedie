@@ -11,30 +11,6 @@ namespace Enciclopedie
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapRoute(
-              name: "ViewCategories",
-              url: "category/index",
-              defaults: new { controller = "Category", action = "Index" }
-          );
-
-            routes.MapRoute(
-               name: "ViewArticles",
-               url: "article/index",
-               defaults: new { controller = "Article", action = "Index" }
-           );
-
-            routes.MapRoute(
-                name: "NewArticle",
-                url: "article/new",
-                defaults: new { controller = "Article", action = "New" }
-            );
-
-            routes.MapRoute(
-               name: "EditArticle",
-               url: "article/edit",
-               defaults: new { controller = "Article", action = "Edit" }
-           );
-
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(

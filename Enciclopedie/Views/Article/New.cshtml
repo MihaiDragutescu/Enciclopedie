@@ -1,5 +1,4 @@
-﻿
-@model Enciclopedie.Models.Article
+﻿@model Enciclopedie.Models.Article
 
 @{
     ViewBag.Titlu = "Adaugare articol";
@@ -11,22 +10,32 @@
 @using (Html.BeginForm(actionName: "New", controllerName: "Article"))
 {
     @Html.HiddenFor(m => m.UserId)
-    @Html.Label("Title", "Titlu Articol")
+    @Html.Label("Title", "Titlu articol:")
     <br />
     @Html.TextBox("Title", null, new { @class = "form-control" })
     @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger " })
     <br />
     <br />
-    @Html.Label("Content", "Continut Articol")
+    @Html.Label("Summary", "Rezumat articol:")
     <br />
-    @Html.TextArea("Content", null, new { @class = "form-control" })
+    @Html.TextArea("Summary", null, new { @class = "my-summary" })
+    <br />
+    @Html.ValidationMessageFor(m => m.Summary, "", new { @class = "text-danger " })
+    <br />
+    <br />
+    @Html.Label("Content", "Continut articol:")
+    <br />
+    @Html.TextArea("Content", null, new { @class = "my-content" })
+    <br />
     @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger " })
     <br />
     <br />
     @Html.Hidden("Date", DateTime.Now, new { @class = "form-control" })
-    <label>Selectati categoria</label>
+    @Html.Hidden("Available", true, new { @class = "form-control" })
+    <label>Selectati categoria:</label>
     @Html.DropDownListFor(m => m.CategoryId, new SelectList(Model.Categories, "Value", "Text"), "Selectati categoria", new { @class = "form-control" })
     @Html.ValidationMessageFor(m => m.CategoryId, "", new { @class = "text-danger" })
-    <br />
-    <button class="btn btn-success" type="submit">Adauga articol</button>
+    <br /><br />
+    <button class="btn btn-success" type="submit">Adauga</button>
 }
+

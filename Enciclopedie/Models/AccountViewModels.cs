@@ -55,7 +55,7 @@ namespace Enciclopedie.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Parola")]
         public string Password { get; set; }
 
         [Display(Name = "Remember me?")]
@@ -69,14 +69,22 @@ namespace Enciclopedie.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
+        [RegularExpression(@"^07(\d{8})$", ErrorMessage = "Numarul de telefon nu este valid!")]
+        public string Phone { get; set; }
+
+        //dd/mm/yyyy
+        [Required, RegularExpression(@"^(0?[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$", ErrorMessage = "Formatul datei nu este valid!")]
+        [Display(Name = "Data nasterii (dd/mm/yyyy)")]
+        public string DateOfBirth { get; set; }
+
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Parola")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Confirmati parola")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }

@@ -1,0 +1,47 @@
+﻿@model Enciclopedie.Models.Image
+
+@{
+    ViewBag.Title = "Vizualizare imagine";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <hr />
+    <dl class="form-control-static">
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageTitle)
+        </dd>
+
+        <br />
+        <dd>
+            <div class="my-thumbnail">
+                <a href='@Url.Action("Show", "Article",new { id = Model.Id })'>
+                    <img src="@Url.Content(Model.ImagePath)" style="max-height:350px; min-height:350px" "   />
+                </a>
+            </div>
+        </dd>
+        <br />
+
+        @if (ViewBag.afisareButoane == true || ViewBag.esteAdmin)
+        {
+            <a class="btn btn-success" href='@Url.Action("Edit", "Image",new { id = Model.Id })'>Modifica imaginea</a>
+        }
+     
+    </dl>
+</div>
+
+
+@if (ViewBag.afisareButoane == true || ViewBag.esteAdmin)
+{
+    using (Html.BeginForm(actionName: "Delete", controllerName: "Image", method: FormMethod.Post, routeValues: new { id = @Model.Id }))
+    {
+        @Html.HttpMethodOverride(HttpVerbs.Delete)
+        <br />
+        <button class="btn btn-danger" type="submit">Sterge imaginea</button>
+    }
+}

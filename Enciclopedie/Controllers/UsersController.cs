@@ -81,6 +81,7 @@ namespace Enciclopedie.Controllers
 
                     db.SaveChanges();
                 }
+
                 return RedirectToAction("Index");
             }
             catch (Exception e)

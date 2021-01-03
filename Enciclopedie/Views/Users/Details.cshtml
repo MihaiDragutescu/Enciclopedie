@@ -2,7 +2,7 @@
 @model Enciclopedie.Models.ApplicationUser
 
 @{
-    ViewBag.Title = "Detalii utilizator";
+    ViewBag.Title = "Detalii utilizator:";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -15,6 +15,16 @@
 @Html.LabelFor(m => m.UserName, "Username:")
 <br />
 @Html.DisplayFor(m => m.UserName)
+<br />
+<br />
+@Html.LabelFor(m => m.Phone, "Telefon:")
+<br />
+@Html.DisplayFor(m => m.Phone)
+<br />
+<br />
+@Html.LabelFor(m => m.DateOfBirth, "Data nasterii:")
+<br />
+@Html.DisplayFor(m => m.DateOfBirth)
 <br />
 <br />
 <label>Rol:</label>

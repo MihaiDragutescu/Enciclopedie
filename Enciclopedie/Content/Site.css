@@ -24,4 +24,37 @@ textarea {
     max-width: 280px;
 }
 
+.my-thumbnail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.my-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.my-caption {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.my-content {
+    height: 250px;
+    width: 300px;
+}
+
+.my-summary {
+    height: 150px;
+    width: 300px;
+}
+
+.navbar {
+    background-color: #000000;
+    border: none;
+    box-shadow: 0 6px 12px #808080;
+}
+
 

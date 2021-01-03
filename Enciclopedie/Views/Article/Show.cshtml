@@ -1,5 +1,4 @@
-﻿
-@model Enciclopedie.Models.Article
+﻿@model Enciclopedie.Models.Article
 
 @{
     ViewBag.Title = "Afisare articol";
@@ -7,11 +6,17 @@
 
 <br />
 <div class="panel panel-default">
-    @Html.Partial("ArticleInfo", Model)
+    <div class="panel-heading">@Model.Title</div>
+    <div class="panel-body">
+        Continut articol: <strong>@Model.Content</strong>
+        <br /><br /> <span class="label label-success">@Model.Date</span>
+        <br /><br /> <i class="glyphicon glyphicon-globe">@Model.Category.CategoryName</i>
+    </div>
+    &nbsp &nbsp <i class="glyphicon glyphicon-user"></i> <i>articol scris de</i> <strong> @Model.User.UserName </strong>
     @if (ViewBag.afisareButoane == true && Model.UserId == ViewBag.utilizatorCurent || ViewBag.esteAdmin)
     {
         <div class="panel-footer">
-            <a class="btn btn-success" href="/Article/Edit/@Model.Id">Modifica articol</a>
+            <a class="btn btn-success" href="/Article/Edit/@Model.Id">Modifica articolul</a>
             <br />
         </div>
     }
@@ -29,9 +34,6 @@
     {
         @Html.HttpMethodOverride(HttpVerbs.Delete)
 
-        <button class="btn btn-info" type="submit">Sterge articol</button>
+        <button class="btn btn-danger" type="submit">Sterge articolul</button>
     }
 }
-
-
-

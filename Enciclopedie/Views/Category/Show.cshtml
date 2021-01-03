@@ -11,7 +11,7 @@
     @if (ViewBag.afisareButoane == true)
     {
         <div class="panel-footer">
-            <a class="btn btn-success" href="/Category/Edit/@Model.CategoryId">Modifica categorie</a>
+            <a class="btn btn-success" href="/Category/Edit/@Model.CategoryId">Modifica categoria</a>
             <br />
         </div>
     }
@@ -28,7 +28,7 @@
 {
     @Html.HttpMethodOverride(HttpVerbs.Delete)
     <br />
-    <button class="btn btn-success" type="submit">Sterge categorie</button>
+    <button class="btn btn-danger" type="submit">Sterge categoria</button>
 }
     
 <hr />

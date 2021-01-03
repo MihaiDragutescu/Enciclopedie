@@ -23,6 +23,7 @@
                 <ul class="nav navbar-nav">
                     @if (User.IsInRole("Administrator"))
                     {
+                        <li>@Html.ActionLink("Galerie", "Index", "Image")</li>
                         <li>@Html.ActionLink("Afisare articole", "Index", "Article")</li>
                         <li>@Html.ActionLink("Afisare categorii", "Index", "Category")</li>
                         <li>@Html.ActionLink("Adauga articol", "New", "Article")</li>
@@ -31,17 +32,20 @@
                     }
                     else if (User.IsInRole("Editor"))
                     {
+                        <li>@Html.ActionLink("Galerie", "Index", "Image")</li>
                         <li>@Html.ActionLink("Afisare articole", "Index", "Article")</li>
                         <li>@Html.ActionLink("Afisare categorii", "Index", "Category")</li>
                         <li>@Html.ActionLink("Adauga articol", "New", "Article")</li>
                     }
                     else if (User.IsInRole("User"))
                     {
+                        <li>@Html.ActionLink("Galerie", "Index", "Image")</li>
                         <li>@Html.ActionLink("Afisare articole", "Index", "Article")</li>
                         <li>@Html.ActionLink("Afisare categorii", "Index", "Category")</li>
                     }
                     else
                     {
+                        <li>@Html.ActionLink("Galerie", "Index", "Image")</li>
                         <li>@Html.ActionLink("Afisare articole", "Index", "Article")</li>
                     }
                 </ul>

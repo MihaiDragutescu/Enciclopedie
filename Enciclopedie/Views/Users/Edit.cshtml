@@ -2,15 +2,19 @@
 @model Enciclopedie.Models.UserViewModel
 
 @{
-    ViewBag.Title = "Modifica rol utilizator";
+    ViewBag.Title = "Actualizeaza rol:";
 }
 
 <h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm(actionName: "Edit", controllerName: "Users", routeValues: new { id =
-@Model.User.Id}))
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Users", routeValues: new
+{
+    id =
+@Model.User.Id
+}))
 {
     @Html.HttpMethodOverride(HttpVerbs.Put)
+    @Html.ValidationSummary()
     @Html.HiddenFor(m => m.User.Id)
     <br />
     @Html.LabelFor(m => m.RoleName, "Rol:")
@@ -19,6 +23,6 @@
     <br />
     <br />
 
-    <button class="btn btn-success" type="submit">Salveaza modificarile</button>
+    <button class="btn btn-success" type="submit">Salveaza</button>
 }
 

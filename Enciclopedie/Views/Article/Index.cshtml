@@ -1,10 +1,9 @@
-﻿
-@{
-    ViewBag.Title = "Lista articole";
+﻿@{
+    ViewBag.Title = "Articole:";
 }
 
 <h2>@ViewBag.Title</h2>
-<hr />
+
 @foreach (Enciclopedie.Models.Article article in ViewBag.Articles)
 {
     <div class="panel panel-default">
@@ -20,5 +19,5 @@
 }
 
 <br />
-&nbsp &nbsp<a class="btn btn-info" href="/Article/New">Adauga articol</a>
+<a class="btn btn-info" href="/Article/New">Adauga articol</a>
 <br />

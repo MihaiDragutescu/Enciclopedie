@@ -66,22 +66,19 @@ namespace Enciclopedie.Controllers
         [NonAction]
         public IEnumerable<SelectListItem> GetAllArticles()
         {
-            // generam o lista goala
             var selectList = new List<SelectListItem>();
-            // Extragem toate articolele din baza de date care sunt disponibile
             var articles = from art in db.Articles.Where(i => i.Available == true)
                              select art;
-            // iteram prin articole
+       
             foreach (var article in articles)
             {
-                // Adaugam in lista elementele necesare pentru dropdown
                 selectList.Add(new SelectListItem
                 {
                     Value = article.Id.ToString(),
                     Text = article.Title.ToString()
                 });
             }
-            // returnam lista de articole
+        
             return selectList;
         }
 

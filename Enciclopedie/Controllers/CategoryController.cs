@@ -56,7 +56,6 @@ namespace Enciclopedie.Controllers
                 if (ModelState.IsValid)
                 {
                     db.Categories.Add(category);
-                    //TryUpdateModel(category);
                     db.SaveChanges();
                     TempData["message"] = "Categoria a fost adaugata!";
                     return RedirectToAction("Index");
@@ -112,6 +111,23 @@ namespace Enciclopedie.Controllers
         [HttpDelete]
         public ActionResult Delete(int id)
         {
+            var articles = from art in db.Articles.Where(i => i.CategoryId == id)
+                           select art;
+
+            if(articles!=null)
+            {
+                foreach (var article in articles)
+                {
+                    var imageId = article.Id;
+                    Image image = db.Images.Find(imageId);
+                    if (image != null)
+                    {
+                        db.Images.Remove(image);
+                    }
+                    db.Articles.Remove(article);
+                }
+            }
+
             Category category = db.Categories.Find(id);
             db.Categories.Remove(category);
             db.SaveChanges();

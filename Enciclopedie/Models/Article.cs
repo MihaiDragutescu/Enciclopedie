@@ -31,19 +31,17 @@ namespace Enciclopedie.Models
 
         public DateTime Date { get; set; }
 
+        [Required(ErrorMessage = "Nu ati setat disponibilitatea articolului!")]
+        public bool Available { get; set; }
+
         [Required(ErrorMessage = "Nu ati selectat o categorie!")]
         public int CategoryId { get; set; }
 
         public string UserId { get; set; }
-       
-        public virtual Category Category { get; set; }
 
         public virtual ApplicationUser User { get; set; }
-
         public virtual Image Image { get; set; }
-
-        [Required(ErrorMessage = "Nu ati setat disponibilitatea articolului!")]
-        public bool Available { get; set; }
+        public virtual Category Category { get; set; }
 
         public IEnumerable<SelectListItem> Categories { get; set; }
     }

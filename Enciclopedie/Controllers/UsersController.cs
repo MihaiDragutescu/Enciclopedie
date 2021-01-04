@@ -27,7 +27,7 @@ namespace Enciclopedie.Controllers
         {
             if (String.IsNullOrEmpty(id))
             {
-                return HttpNotFound("Missing the id parameter!");
+                return HttpNotFound("Lipseste parametrul id!");
             }
 
             ApplicationUser user = db.Users
@@ -42,14 +42,14 @@ namespace Enciclopedie.Controllers
                 return View(user);
             }
 
-            return HttpNotFound("Cloudn't find the user with given id!");
+            return HttpNotFound("Nu s-a gasit user-ul cu id-ul dat!");
         }
 
         public ActionResult Edit(string id)
         {
             if (String.IsNullOrEmpty(id))
             {
-                return HttpNotFound("Missing the id parameter!");
+                return HttpNotFound("Lipseste parametrul id!");
             }
             UserViewModel uvm = new UserViewModel();
             uvm.User = db.Users.Find(id);

@@ -19,11 +19,11 @@ namespace Enciclopedie.Models
         [MinLength(5, ErrorMessage = "Titlul trebuie sa aiba minim 5 de caractere!"),
          MaxLength(100, ErrorMessage = "Titlul trebuie sa aiba maxim 100 de caractere!"),
          RegularExpression(@"^[A-Z].*", ErrorMessage = "Titlul trebuie sa inceapa cu litera mare!")]
-        public String ImageTitle { get; set; }
+        public string ImageTitle { get; set; }
 
         [DisplayName("Incarca imaginea:"),
          RegularExpression(@"^.*\.(jpg|JPG|gif|GIF|doc|DOC|pdf|PDF|png|jfif)$", ErrorMessage = "Fisierul incarcat nu are o extensie corespunzatoare!")]
-        public String ImagePath { get; set; }
+        public string ImagePath { get; set; }
 
         [NotMapped]
         public HttpPostedFileBase ImageFile { get; set; }

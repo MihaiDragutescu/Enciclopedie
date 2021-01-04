@@ -166,7 +166,7 @@ namespace Enciclopedie.Controllers
                         roleManager.Create(new IdentityRole("User"));
                     UserManager.AddToRole(user.Id, "User");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Article");
                 }
                 AddErrors(result);
             }
@@ -452,7 +452,7 @@ namespace Enciclopedie.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Article");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
